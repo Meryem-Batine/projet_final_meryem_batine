@@ -2,6 +2,11 @@
 @section('login')
     
 @endsection
+
+
+<!doctype html>
+<html lang="zxx">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,6 +33,9 @@
 </head>
 
 <body>
+    <!--::header part start::-->
+    <!-- Header part end-->
+
 
     <!-- breadcrumb start-->
     <section class="breadcrumb breadcrumb_bg">
@@ -56,7 +64,8 @@
                             <h2>New to our Shop?</h2>
                             <p>There are advances being made in science and technology
                                 everyday, and a good example of this is the</p>
-                            <a href="#" class="btn_3">Create an Account</a>
+                                {{-- register --}}
+                            <a href="{{route("register")}}" class="btn_3">Create an Account</a>
                         </div>
                     </div>
                 </div>
@@ -65,24 +74,33 @@
                         <div class="login_part_form_iner">
                             <h3>Welcome Back ! <br>
                                 Please Sign in now</h3>
-                            <form class="row contact_form" action="login" method="POST" novalidate="novalidate">
+                            <form class="row contact_form" action="{{ route('login') }}" method="POST"
+                                novalidate="novalidate">
+                                @csrf
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value=""
-                                        placeholder="Username">
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        value="" placeholder="Email">
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="password" value=""
-                                        placeholder="Password">
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        value="" placeholder="Password">
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                                 </div>
+                                {{-- remember me --}}
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
-                                        <input type="checkbox" id="f-option" name="selector">
-                                        <label for="f-option">Remember me</label>
+                                        <input type="checkbox" id="remember_me" name="remember">
+                                        <label for="remember_me">Remember me</label>
                                     </div>
                                     <button type="submit" value="submit" class="btn_3">
                                         log in
                                     </button>
-                                    <a class="lost_pass" href="#">forget password?</a>
+                                    @if (Route::has('password.request'))
+                                        <a class="lost_pass" href="{{ route('password.request') }}">
+                                            {{ __('Forgot your password?') }}
+                                        </a>
+                                    @endif
                                 </div>
                             </form>
                         </div>
@@ -92,6 +110,7 @@
         </div>
     </section>
     <!--================login_part end =================-->
+
 
     <!-- jquery plugins here-->
     <!-- jquery -->
@@ -124,3 +143,4 @@
     <script src="js/custom.js"></script>
 </body>
 
+</html>
