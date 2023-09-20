@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HompeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
@@ -22,9 +23,7 @@ Route::get('/', [HompeController::class, 'index'])->name('home.index');
 Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::get('/panier',[PanierController::class, 'index'])->name('panier.index');
-
-
-
+// Route::get('/login',[LoginController::class, 'index'])->name('login.index');
 
 
 

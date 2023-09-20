@@ -62,10 +62,10 @@
                         <div class="hearer_icon d-flex">
                             {{-- <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a> --}}
                             <a href=""><i class="ti-heart"></i></a>
-                            <div class="dropdown cart">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                            <a href={{route('panier.index')}}> <i class="fas fa-cart-plus"></i></a>
+                            {{-- <div class="dropdown cart">
+                                <a class="dropdown-toggle" id="navbarDropdown3" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-cart-plus"></i>
                                 </a>
 
                                 <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,8 +74,8 @@
                                     </div>
                                 </div> -->
                                 
-                            </div>
-                            <a href={{route("panier.index")}}><i class="fa-solid fa-circle-user" style="color: #000000;"></i></a>
+                            </div> --}}
+                            <a href={{route('login')}} ><i class="fa-solid fa-circle-user" style="color: #000000;"></i></a>
 
                         </div>
                     </nav>
@@ -95,12 +95,18 @@
     <!-- Header part end-->
 
 
+
+{{--  --}}
 @yield('home')
 @yield('contact')
 @yield('shop')
 @yield('show')
-
+@yield('login')
+@yield('register')
 {{--  --}}
+
+
+
     <!--::footer_part start::-->
     <footer class="footer_part">
         <div class="container">
