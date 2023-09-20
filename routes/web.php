@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HompeController;
+use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/contact',function(){
-     return view('frontend.pages.contact');
-});
+Route::get('/', [HompeController::class, 'index'])->name('home.index');
+Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');
+Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
+Route::get('/panier',[PanierController::class, 'index'])->name('panier.index');
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

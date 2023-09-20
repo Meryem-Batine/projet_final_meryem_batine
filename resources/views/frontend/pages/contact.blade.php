@@ -26,41 +26,47 @@
     <section class="contact-section padding_top">
         <div class="container">
             <div class="d-none d-sm-block mb-5 pb-4">
-                <div id="map" style="height: 480px;"></div>
-                <script>
-                    function initMap() {
-                        var uluru = {
-                            lat: -25.363,
-                            lng: 131.044
-                        };
-                        var grayStyles = [{
-                                featureType: "all",
-                                stylers: [{
-                                        saturation: -90
-                                    },
-                                    {
-                                        lightness: 50
-                                    }
-                                ]
-                            },
-                            {
-                                elementType: 'labels.text.fill',
-                                stylers: [{
-                                    color: '#ccdee9'
-                                }]
-                            }
-                        ];
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            center: {
-                                lat: -31.197,
-                                lng: 150.744
-                            },
-                            zoom: 9,
-                            styles: grayStyles,
-                            scrollwheel: false
-                        });
-                    }
-                </script>
+                <div id="map" style=""></div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.437884161907!2d-7.6757522172561865!3d33.593941273049104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d30edfbd4ac1%3A0xab971f8c87719e18!2sSketch%20Design%20Casablanca!5e0!3m2!1sfr!2sma!4v1695219428166!5m2!1sfr!2sma"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="d-flex justify-center align-items-center w-100 "></iframe>
+
+                {{-- <script>
+              function initMap() {
+                var uluru = {
+                  lat: -25.363,
+                  lng: 131.044
+                };
+                var grayStyles = [{
+                    featureType: "all",
+                    stylers: [{
+                        saturation: -90
+                      },
+                      {
+                        lightness: 50
+                      }
+                    ]
+                  },
+                  {
+                    elementType: 'labels.text.fill',
+                    stylers: [{
+                      color: '#ccdee9'
+                    }]
+                  }
+                ];
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  center: {
+                    lat: -31.197,
+                    lng: 150.744
+                  },
+                  zoom: 9,
+                  styles: grayStyles,
+                  scrollwheel: false
+                });
+              }
+            </script> --}}
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap">
                 </script>
 
@@ -72,8 +78,8 @@
                     <h2 class="contact-title">Get in Touch</h2>
                 </div>
                 <div class="col-lg-8">
-                    <form class="form-contact contact_form" action="contact_process.php" method="post"
-                        id="contactForm" novalidate="novalidate">
+                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+                        novalidate="novalidate">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">

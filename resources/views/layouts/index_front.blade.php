@@ -42,21 +42,20 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href={{route("home.index")}}>Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" href={{route("shop.index")}} id="navbarDropdown_1">
                                         Shop
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                    {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                         <a class="dropdown-item" href="category.html"> shop category</a>
                                         <a class="dropdown-item" href="single-product.html">product details</a>
                                         
-                                    </div>
+                                    </div> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/contact">Contact</a>
+                                    <a class="nav-link" href={{route("contact.index")}}>Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -76,7 +75,7 @@
                                 </div> -->
                                 
                             </div>
-                            <a href=""><i class="fa-solid fa-circle-user" style="color: #000000;"></i></a>
+                            <a href={{route("panier.index")}}><i class="fa-solid fa-circle-user" style="color: #000000;"></i></a>
 
                         </div>
                     </nav>
@@ -98,6 +97,9 @@
 
 @yield('home')
 @yield('contact')
+@yield('shop')
+@yield('show')
+
 {{--  --}}
     <!--::footer_part start::-->
     <footer class="footer_part">
