@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\MailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HompeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ShowController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,13 +20,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//! Pages______________________________________________________________________________________________________________________________________________
 
 Route::get('/', [HompeController::class, 'index'])->name('home.index');
 Route::get('/shop',[ShopController::class, 'index'])->name('shop.index');
+Route::get('/show',[ShowController::class, 'index'])->name('show.index');
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
 Route::get('/panier',[PanierController::class, 'index'])->name('panier.index');
-// Route::get('/login',[LoginController::class, 'index'])->name('login.index');
 
+
+//^ mail___________________________________________________________________________________________________________________________________________________
+
+Route::post("/backend/store/mailboxes",[MailController::class,"store"])->name("maili.store");
+
+
+
+
+// !!mail
+Route::post("/sendmail" , [HompeController::class , 'suscribemail'])->name("sendemail");
 
 
 Route::get('/dashboard', function () {

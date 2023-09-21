@@ -343,13 +343,16 @@
                                 <div id="seconds" class="date"></div>
                             </div>
                         </div>
+                        <form action={{route("sendemail")}} method="POST">
+                            @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="enter email address"
-                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="email" class="form-control" placeholder="enter email address"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" name="email" id="email" required>
                             <div class="input-group-append">
-                                <a href="#" class="input-group-text btn_2" id="basic-addon2">book now</a>
+                                <button type="submit" class="input-group-text btn_2" id="basic-addon2">book now</button>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -421,13 +424,16 @@
                         <h5>Join Our Newsletter</h5>
                         <h2>Subscribe to get Updated
                             with new offers</h2>
+                        <form action={{route("sendemail")}} method="POST">
+                            @csrf
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="enter email address"
-                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="email" class="form-control" placeholder="enter email address"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" name="email" id="email" required>
                             <div class="input-group-append">
-                                <a href="#" class="input-group-text btn_2" id="basic-addon2">subscribe now</a>
+                                <button type="submit" class="input-group-text btn_2" id="basic-addon2">subscribe now</button>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
