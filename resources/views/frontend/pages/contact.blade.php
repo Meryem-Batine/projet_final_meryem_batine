@@ -84,12 +84,40 @@
                     <div class="row">
                       <div class="col-12">
                         <div class="form-group">
-        
                           <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
                             onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
                             placeholder='Enter Message'></textarea>
                         </div>
                       </div>
+                      {{-- If --}}
+                      {{-- @if (Auth::user())
+                <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name' value="{{Auth::user()->name}}">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address' value="{{Auth::user()->email}}">
+                </div>
+              </div>
+              @else
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
+                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                </div>
+              </div>
+              @endif --}}
+                      {{-- end If--}}
                       <div class="col-sm-6">
                         <div class="form-group">
                           <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"

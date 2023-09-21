@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HompeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PanierController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShowController;
@@ -30,14 +31,15 @@ Route::get('/panier',[PanierController::class, 'index'])->name('panier.index');
 
 
 //^ mail___________________________________________________________________________________________________________________________________________________
-
 Route::post("/backend/store/mailboxes",[MailController::class,"store"])->name("maili.store");
 
 
 
 
-// !!mail
+// !mail
 Route::post("/sendmail" , [HompeController::class , 'suscribemail'])->name("sendemail");
+//~~ product__________________________________________________________
+Route::get("/products/show/{product}", [ProductController::class, "show"])->name("product.show");
 
 
 Route::get('/dashboard', function () {

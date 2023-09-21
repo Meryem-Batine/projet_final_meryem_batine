@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Emailcontact;
 use App\Mail\Subscribe;
+use App\Models\Produt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -11,7 +12,11 @@ use Illuminate\Support\Facades\Mail;
 class HompeController extends Controller
 {
     public function index(){
-        return view('frontend.pages.home');
+
+        $products =Produt::all();
+        $lastimg = $products->slice(-4);
+        $imgcrsl = Produt::all()->shuffle()->take(3);
+        return view('frontend.pages.home',compact("products","lastimg","imgcrsl"));
     }
 
     public function suscribemail(Request $request){

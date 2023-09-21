@@ -19,7 +19,6 @@ class UserProductSeeder extends Seeder
                 "product_id"=>3,
                 "quantite"=>15,
             ],
-
         ]);
     }
 }
