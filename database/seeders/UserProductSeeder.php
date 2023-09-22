@@ -13,12 +13,12 @@ class UserProductSeeder extends Seeder
      */
     public function run(): void
     {
-        User::insert([
+     /*    User::insert([
             [
-                "user_id"=>2,
-                "product_id"=>3,
+                "user_id"=>1,
+                "product_id"=>1,
                 "quantite"=>15,
             ],
-        ]);
+        ]); */
     }
 }

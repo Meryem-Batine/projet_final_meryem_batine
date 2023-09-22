@@ -1,5 +1,5 @@
-@extends('layouts.index_back')
-@section('mail')
+@extends("layouts.index_back")
+@section('roles')
 <!-- resources/views/welcome.blade.php -->
 <!DOCTYPE html>
 <html lang="zxx">
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
 </head>
 
 <body>
@@ -38,30 +40,31 @@
     <table class="table mt-5  ">
         <thead align="middle">
             <tr>
-                <th scope="col"></th>
-                <th scope="col">from</th>
-                <th scope="col">subject</th>
+                
+                <th scope="col">name</th>
                 <th scope="col">email</th>
-                <th scope="col">descrption</th>
+                <th scope="col">roles</th>
+                <th scope="col">assign role</th>
             </tr>
         </thead>
         <tbody align="middle">
-            @foreach ($emails as $key => $email )
-            @if ($email->checkmail == 1)
-                <tr class="bg-secondary">
-                <th scope="row">{{$key + 1}}</th>
-                <td>{{$email->name}}</td>
-                <td>{{$email->subject}}</td>
-                <td>{{$email->email}}</td>
-                <td>@include("backend.components.MailBox.showMail")</td>
-                </tr>
-            @else
-            <tr >
-                <th scope="row">{{$key + 1}}</th>
-                <td>{{$email->name}}</td>
-                <td>{{$email->subject}}</td>
-                <td>{{$email->email}}</td>
-                <td>@include("backend.components.MailBox.showMail")</td>
+            @foreach ($users as $key => $user)
+            @if (!$user->hasRole("admin"))
+                <tr >
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>
+                    @foreach ($user->roles as $role )
+                    <form action="{{ route('user.role.remove', [$user->id, $role->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger mb-2" onclick="return confirm(' supprimer !')"> {{ $role->name }}</button>
+                    </form>
+                    @endforeach
+                </td>
+                <td>
+                    @include("backend.components.roles.roles")
+                </td>
                 </tr>
             @endif
                 
@@ -69,6 +72,8 @@
             
         </tbody>
     </table>
+    <br><br><br>
+
     <!-- jquery plugins here-->
     <script src="{{ asset('js/jquery-1.12.1.min.js') }}"></script>
     <!-- popper js -->

@@ -31,31 +31,6 @@
         <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
     </head>
 
-{{-- <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>aranoz</title>
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-</head> --}}
-
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
@@ -80,11 +55,7 @@
                                     <a class="nav-link" href={{route("shop.index")}} id="navbarDropdown_1">
                                         Shop
                                     </a>
-                                    {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="category.html"> shop category</a>
-                                        <a class="dropdown-item" href="single-product.html">product details</a>
-                                        
-                                    </div> --}}
+
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href={{route("contact.index")}}>Contact</a>
@@ -92,23 +63,20 @@
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
-                            {{-- <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a> --}}
                             <a href=""><i class="ti-heart"></i></a>
                             <a href={{route('panier.index')}}> <i class="fas fa-cart-plus"></i></a>
-                            {{-- <div class="dropdown cart">
-                                <a class="dropdown-toggle" id="navbarDropdown3" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                </a>
-
-                                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <div class="single_product">
-    
-                                    </div>
-                                </div> -->
-                                
-                            </div> --}}
                             <a href={{route('login')}} ><i class="fa-solid fa-circle-user" style="color: #000000;"></i></a>
-
+                            {{--logout--}}
+                            @auth
+                            <form action="{{ route('logout')}}" method="POST">
+                                @csrf
+                                <a class="text-dark" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    <i class="text-dark ti-power-off"></i>
+                                </a>
+                            </form>
+                        @endauth
                         </div>
                     </nav>
                 </div>

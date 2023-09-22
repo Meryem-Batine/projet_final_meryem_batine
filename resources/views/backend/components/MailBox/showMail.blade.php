@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#email{{ $email->id }}">
-    Show Desc
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#email{{ $email->id }}">
+    Description
     </button>
     
     
@@ -10,7 +10,7 @@
         <div class="modal-dialog" style="max-height: 80vh" role="document">
             <div class="modal-content ">
                 <div class="modal-header ">
-                    <h5 class="modal-title" id="email{{ $email->id }}Label">Modal title</h5>
+                    <h5 class="modal-title" id="email{{ $email->id }}Label">Description</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -19,12 +19,7 @@
                     <p class="text-left ">{{ $email->message }}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    {{-- <form action="{{route("mailbox.checkmail",$email->id)}}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit" class="btn btn-primary">Mark as read</button>
-                    </form> --}}
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

@@ -41,5 +41,14 @@ class MailController extends Controller
         return redirect()->back()->with("succes",'you have send your message ');
     }
 
+    public function checkEmail(Boxemail $email){
+        $email->checkEmail = 1;
+        $email->save();
+        return redirect()->back();
+    }
+
+
+
+
 
 }

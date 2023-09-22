@@ -1,5 +1,5 @@
-@extends('layouts.index_back')
-@section('mail')
+@extends("layouts.index_back")
+@section('infos')
 <!-- resources/views/welcome.blade.php -->
 <!DOCTYPE html>
 <html lang="zxx">
@@ -31,44 +31,46 @@
 
 <body>
 
-
     <br>
     <br><br><br>
+    <div class="container d-flex justify-content-center align-items-center">
+        @foreach ( $infos as $info)
+        @include("backend.infos.update_infos")
+        @endforeach
+</div>
+<br>
 
-    <table class="table mt-5  ">
+    <table class="table mt-5 w-75 container ">
         <thead align="middle">
             <tr>
-                <th scope="col"></th>
-                <th scope="col">from</th>
-                <th scope="col">subject</th>
+                
+                <th scope="col">ville</th>
+                <th scope="col">adrs</th>
+                <th scope="col">phone</th>
+                <th scope="col">emploi</th>
                 <th scope="col">email</th>
-                <th scope="col">descrption</th>
+                <th scope="col">Title</th>
+                <th scope="col">UpDate</th>
+
             </tr>
         </thead>
         <tbody align="middle">
-            @foreach ($emails as $key => $email )
-            @if ($email->checkmail == 1)
-                <tr class="bg-secondary">
-                <th scope="row">{{$key + 1}}</th>
-                <td>{{$email->name}}</td>
-                <td>{{$email->subject}}</td>
-                <td>{{$email->email}}</td>
-                <td>@include("backend.components.MailBox.showMail")</td>
+            @foreach ($infos as $info)
+                <tr >
+                <td>{{$info->ville}}</td>
+                <td>{{$info->adrs}}</td>
+                <td>{{$info->phone}}</td>
+                <td>{{$info->emploi}}</td>
+                <td>{{$info->email}}</td>
+                <td>{{$info->title}}</td>
+                <td>{{$info->title}}</td>
                 </tr>
-            @else
-            <tr >
-                <th scope="row">{{$key + 1}}</th>
-                <td>{{$email->name}}</td>
-                <td>{{$email->subject}}</td>
-                <td>{{$email->email}}</td>
-                <td>@include("backend.components.MailBox.showMail")</td>
-                </tr>
-            @endif
-                
+
             @endforeach
-            
+
         </tbody>
     </table>
+
     <!-- jquery plugins here-->
     <script src="{{ asset('js/jquery-1.12.1.min.js') }}"></script>
     <!-- popper js -->

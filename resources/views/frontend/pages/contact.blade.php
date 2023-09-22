@@ -158,15 +158,15 @@
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                         <div class="media-body">
-                            <h3>00 (440) 9865 562</h3>
-                            <p>Mon to Fri 9am to 6pm</p>
+                          <h3>{{$info->phone}}</h3>
+                            <p>{{$info->emploi}}</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-email"></i></span>
                         <div class="media-body">
-                            <h3>support@colorlib.com</h3>
-                            <p>Send us your query anytime!</p>
+                          <h3>{{$info->email}}</h3>
+                          <p>{{$info->title}}</p>
                         </div>
                     </div>
                     @endforeach
