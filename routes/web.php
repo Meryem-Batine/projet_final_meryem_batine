@@ -40,6 +40,7 @@ Route::post("/sendmail" , [HompeController::class , 'suscribemail'])->name("send
 
 
 //~~ product___________________________________________________________________________________________________________________________________________________________
+Route::get("/products/index", [ShopController::class, "index"])->name("product.index");
 
 Route::get("/products/show/{product}", [ProductController::class, "show"])->name("product.show");
 

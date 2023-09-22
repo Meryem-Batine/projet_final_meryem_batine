@@ -35,7 +35,7 @@ class ProdutSeeder extends Seeder
                 "name"=>"chaise modern",
                 "desc"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, aliquam?",
                 "prix"=>200,
-                "stock"=>6,
+                "stock"=>3,
                 "categorie_id"=>1,
             ],
 
@@ -71,7 +71,7 @@ class ProdutSeeder extends Seeder
                 "name"=>"chaise white",
                 "desc"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, aliquam?",
                 "prix"=>1500,
-                "stock"=>5,
+                "stock"=>6,
                 "categorie_id"=>1,
             ],
             [
@@ -108,15 +108,7 @@ class ProdutSeeder extends Seeder
                 "categorie_id"=>2,
             ],
             [
-                "image"=>"t3.jpg",
-                "name"=>"mini table",
-                "desc"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, aliquam?",
-                "prix"=>1500,
-                "stock"=>4,
-                "categorie_id"=>2,
-            ],
-            [
-                "image"=>"t4.webg",
+                "image"=>"t4.webp",
                 "name"=>"black table",
                 "desc"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, aliquam?",
                 "prix"=>1300,
@@ -127,7 +119,7 @@ class ProdutSeeder extends Seeder
                 "image"=>"t5.jpg",
                 "name"=>"silver table",
                 "desc"=>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, aliquam?",
-                "prix"=>2500,
+                "prix"=>5500,
                 "stock"=>3,
                 "categorie_id"=>2,
             ],

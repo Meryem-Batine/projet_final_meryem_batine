@@ -15,10 +15,12 @@ class HompeController extends Controller
 
         $products =Produt::all();
         $lastimg = $products->slice(-4);
+        $latestProducts = Produt::latest()->take(4)->get();
+
         $imgcrsl = Produt::all()->shuffle()->take(3);
         $myprdct =Produt::all()->shuffle()->take(8);
         $bestseller = Produt::where('stock', '<=', 5)->get();
-        return view('frontend.pages.home',compact("products","lastimg","imgcrsl","myprdct","bestseller"));
+        return view('frontend.pages.home',compact("products","lastimg","latestProducts","imgcrsl","myprdct","bestseller"));
     }
 
     public function suscribemail(Request $request){
