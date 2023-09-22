@@ -145,9 +145,14 @@
                 <div class="col-lg-4">
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="ti-home"></i></span>
+                        @foreach ($infos as $info)
                         <div class="media-body">
-                            <h3>Buttonwood, California.</h3>
-                            <p>Rosemead, CA 91770</p>
+                            <h3>{{$info->ville}}</h3>
+                            <p>{{$info->adrs}}</p>
+
+
+                            {{-- <h3>00 (440) 9865 562</h3>
+                            <p>Mon to Fri 9am to 6pm</p> --}}
                         </div>
                     </div>
                     <div class="media contact-info">
@@ -164,6 +169,7 @@
                             <p>Send us your query anytime!</p>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

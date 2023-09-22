@@ -10,8 +10,11 @@ class Infos extends Model
     use HasFactory;
 
     protected $fillable = [
-        "adresse",
-        "email",
+        "ville" ,
+        "adrs",
         "phone",
+        "emploi",
+        "email",
+        "title",
     ];
 }

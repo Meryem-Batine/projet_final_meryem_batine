@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ShowController;
+use Faker\Container\ContainerBuilder;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +32,15 @@ Route::get('/panier',[PanierController::class, 'index'])->name('panier.index');
 
 
 //^ mail___________________________________________________________________________________________________________________________________________________
+
 Route::post("/backend/store/mailboxes",[MailController::class,"store"])->name("maili.store");
-
-
-
-
-// !mail
 Route::post("/sendmail" , [HompeController::class , 'suscribemail'])->name("sendemail");
-//~~ product__________________________________________________________
+
+// &Contact_____________________________________________________________________________________________________________________________________________
+
+
+//~~ product___________________________________________________________________________________________________________________________________________________________
+
 Route::get("/products/show/{product}", [ProductController::class, "show"])->name("product.show");
 
 

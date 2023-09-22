@@ -16,7 +16,9 @@ class HompeController extends Controller
         $products =Produt::all();
         $lastimg = $products->slice(-4);
         $imgcrsl = Produt::all()->shuffle()->take(3);
-        return view('frontend.pages.home',compact("products","lastimg","imgcrsl"));
+        $myprdct =Produt::all()->shuffle()->take(8);
+        $bestseller = Produt::where('stock', '<=', 5)->get();
+        return view('frontend.pages.home',compact("products","lastimg","imgcrsl","myprdct","bestseller"));
     }
 
     public function suscribemail(Request $request){
